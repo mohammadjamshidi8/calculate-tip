@@ -6,8 +6,9 @@ import Payment from "./components/Payment"
 
 function App() {
 
-  const [bill , setBill] = useState(0)
-  const [service , setService] = useState(0)
+  const [bill , setBill] = useState(null)
+  const [service , setService] = useState(null)
+  const [friendService , setFriendService] = useState(0)
 
 
   return (
@@ -16,8 +17,8 @@ function App() {
         <div className="bg-white p-10 rounded-md flex flex-col gap-y-10">
         <Bill bill={bill} setBill={setBill}/>
         <Services service={service} setService={setService}/>
-        <FriendService />
-        <Payment bill={bill}/>
+        <FriendService friendService={friendService} setFriendService={setFriendService} />
+        <Payment bill={bill} setBill={setBill} service={service} friendService={friendService}/>
         </div>
       </div>
     </>
